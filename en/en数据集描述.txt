@@ -1,0 +1,8 @@
+数据集包含简单清洗的的抄袭英文文本数据1947条，按10：1（随机）划分为Source_dataset（1770条）和ChatGPT_dataset（177条），原文本按照平均长度1200分割送入ChatGPT，经过"gpt-3.5-turbo"改写并整理得到ChatGPT_dataset.jsonl，Source_dataset经过整理得到Source_dataset.jsonl。
+Source_dataset作为反例（label为0）；
+ChatGPT_dataset用"gpt-3.5-turbo"改写作为正例（label为1）。
+
+数据集包含训练集和测试集（3：1）两个json文件：
+（1）PD_dataset_train.jsonl：包含1461行，每一行表示一条数据，格式为  "ID": id,"label": label,"text": "text" ， 其中ID表示编号，label为0/1，0代表反例（数据非AI生成），1代表正例（数据由AI生成），text为文本内容；
+
+（2）NoLabel_PD_dataset_test.jsonl：包含488行，每一行表示一条数据，格式为  "ID": id,"text": "text" ， 其中ID表示编号，无label，即不告知数据是否AI生成，text为文本内容；

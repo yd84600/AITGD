@@ -1,0 +1,8 @@
+数据集包含财报数据3300条，按10：1（随机）划分为Source_dataset（3000条）和ChatGPT_dataset（300条），平均长度：900，
+Source_dataset作为反例（label为0）；
+ChatGPT_dataset用"gpt-3.5-turbo"改写作为正例（label为1）。
+
+数据集包含训练集和测试集（3：1）两个json文件：
+（1）FinancialReport_dataset_train.jsonl：包含2475行，每一行表示一条数据，格式为  "ID": id,"label": label,"text": "text" ， 其中ID表示编号，label为0/1，0代表反例（数据非AI生成），1代表正例（数据由AI生成），text为文本内容；
+
+（2）NoLabel_FinancialReport_dataset_test.json：包含825行，每一行表示一条数据，格式为  "ID": id,"text": "text" ， 其中ID表示编号，无label，即不告知数据是否AI生成，text为文本内容；
